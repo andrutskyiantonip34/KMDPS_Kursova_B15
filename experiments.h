@@ -8,3 +8,4 @@ void runsCount();
 void nmaxInfluence();
 void noFlowControl();
 void improvement();
+void distribution();

@@ -182,3 +182,18 @@ void improvement() {
     }
     cout << "\n";
 }
+
+void distribution() {
+    cout << "9. Розподіл часу передачі (Nmax = 3, кожне 30-те повідомлення)\n";
+    Params p;
+    p.seed = 1;
+    Result r = runOnce(p);
+    const int step = 30;
+    const double h = 2;
+    vector<int> cnt(int(r.Tall.mx / h) + 1, 0);
+    for (size_t i = 0; i < r.times.size(); i += step) cnt[int(r.times[i] / h)]++;
+    cout << "від до | частота\n" << setprecision(0);
+    for (size_t i = int(r.Tall.mn / h); i < cnt.size(); i++)
+        cout << i * h << " " << (i + 1) * h << " | " << cnt[i] << "\n";
+    cout << setprecision(4) << "\n";
+}

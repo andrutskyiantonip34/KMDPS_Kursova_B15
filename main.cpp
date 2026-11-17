@@ -15,6 +15,7 @@ int main() {
     nmaxInfluence();
     noFlowControl();
     improvement();
+    distribution();
 
     return 0;
 }
